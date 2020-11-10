@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" style="margin-top: 80px">
+<div class="container" >
         @if(session()->has('success_msg'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session()->get('success_msg') }}
@@ -51,7 +51,7 @@
                             </p>
                         </div>
                         <div class="col-lg-4">
-                            <div class="row">
+                            <div class="cart-btn">
                                 <form action="{{ route('cart.update') }}" method="POST">
                                     {{ csrf_field() }}
                                     <div class="form-group row">
@@ -74,7 +74,7 @@
                 @if(count($cartCollection)>0)
                     <form action="{{ route('cart.clear') }}" method="POST">
                         {{ csrf_field() }}
-                        <button class="btn btn-secondary btn-md">Clear Cart</button>
+                        <button class="btn btn-secondary btn-md" style="margin-bottom: 15px">Clear Cart</button>
                     </form>
                 @endif
             </div>

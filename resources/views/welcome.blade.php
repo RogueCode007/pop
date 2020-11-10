@@ -26,10 +26,10 @@
             <a href="/items"  class="shop">Shop Now</a>
             </div>  
         </div>    
-        <div class="row">
-            <div class="col-md-4 col-sm-12 card-1 rounded"><a href="{{route('items.bag')}}" class="label">Bags</a></div>
-            <div class="col-md-4 col-sm-12 card-2 rounded"><a href="{{route('items.dress')}}" class="label">Dresses</a></div>
-            <div class="col-md-4 col-sm-12 card-3 rounded"><a href="{{route('items.footwear')}}" class="label">Heels</a></div>
+        <div class="tabs">
+            <div class="tab card-1 rounded"><a href="{{route('items.bag')}}" class="label">Bags</a></div>
+            <div class="tab card-2 rounded"><a href="{{route('items.dress')}}" class="label">Dresses</a></div>
+            <div class="tab card-3 rounded"><a href="{{route('items.footwear')}}" class="label">Heels</a></div>
         </div>         
     
 
