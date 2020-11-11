@@ -26,13 +26,13 @@ class ItemsController extends Controller
         $items  = Item::where('category', "dress")
                     ->latest()
                     ->paginate(9);
-        return view('items.dress', ["items"=> $items]);
+        return view('items.index', ["items"=> $items]);
     }
     public function show_all_footwear(){
         $items  = Item::where('category', 'footwear')
                     ->latest()
                     ->paginate(9);
-        return view('items.footwear', compact('items'))
+        return view('items.index', compact('items'))
                                 ->with('i', (request()->input('page', 1)- 1) 
                                 * 9);
     }
@@ -40,7 +40,7 @@ class ItemsController extends Controller
         $items  = Item::where('category', 'bag')
                     ->latest()
                     ->paginate(9);
-        return view('items.bag', compact('items'))
+        return view('items.index', compact('items'))
         ->with('i', (request()->input('page', 1)- 1) 
         * 9);
     }
@@ -54,9 +54,9 @@ class ItemsController extends Controller
                 'name'=> 'bail|required|string|max:50',
                 'price'=> 'bail|required|numeric',
                 'description'=> 'bail|required|string',
-                'coverImage'=> 'bail|required|image|max:4096',
+                'coverImage'=> 'bail|required|image|max:1024',
                 'category'=> 'bail|required|string',
-                'photo.*' => 'bail|image|max:4096',
+                'photo.*' => 'bail|image|max:1024',
             ]);
         }catch(Throwable $e){
             return redirect()->routes('items.create')->withInput();
@@ -108,7 +108,7 @@ class ItemsController extends Controller
             'price'=> 'bail|nullable|numeric',
             'description'=> 'bail|nullable|string',
             'category'=> 'string|nullable',
-            'coverImage' => 'bail|nullable|image|max:4096'
+            'coverImage' => 'bail|nullable|image|max:1024'
             ]);
         }catch(Throwable $e){
             return redirect('items/edit/{{id}}')->withInput();

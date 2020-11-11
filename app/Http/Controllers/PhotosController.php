@@ -17,7 +17,7 @@ class PhotosController extends Controller
     public function store($id, Request $request){
         $request->validate([
             'photo'=> 'required',
-            'photo.*'=> 'bail|image|max:4096'
+            'photo.*'=> 'bail|image|max:1024'
         ]);
         $item = Item::findOrFail($id);
         if($request->hasFile('photo')){
@@ -28,7 +28,7 @@ class PhotosController extends Controller
                 $item->photos()->save($photo);
             }
         }
-        return redirect()->route('items.show', [$id])->with('success', 'Item added to store!');
+        return redirect()->route('items.show', [$id])->with('success', 'New photos added!');
     }
 
    

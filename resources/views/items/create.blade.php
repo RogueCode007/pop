@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
   <div >        
-    <div class="create-form">
+    <div class="item-form">
       <h1>Add a new item</h1>
       <form action="/items" method="POST" enctype="multipart/form-data" class="md-container text-left bg-dark">
       @csrf
@@ -36,7 +36,7 @@
         <div class="form-group ">
           <label for="description" class="">Description*</label>
           <div class="input">
-            <textarea name="description" id="description" value="{{old('description') ?? ''}}" class="" style="width: 100%"></textarea>
+            <textarea name="description" id="description" value="{{old('description') ?? ''}}" class="" style="width: 100%; height: 150px"></textarea>
           </div>
           @error('description')
               <div class="alert alert-danger">{{ $message }}</div>
@@ -69,7 +69,7 @@
               <div class="alert alert-danger">{{ $message }}</div>
           @enderror
         </div>
-        <button class="btn-primary">Add Item</button>
+        <button class=" btn btn-primary">Add Item</button>
       </form>
     </div>
   </div>

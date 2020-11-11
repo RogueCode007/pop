@@ -45,9 +45,9 @@
                         <div class="col-lg-5">
                             <p>
                                 <b><a href="items/{{$item->id}}">{{ $item->name }}</a></b><br>
-                                <b>Price: </b>${{ $item->price }}<br>
-                                <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br>
-                                {{--    <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
+                                <b>Price: </b>{{ $item->price }} NGN<br>
+                                <b>Sub Total: </b>{{ \Cart::get($item->id)->getPriceSum() }} NGN<br>
+                                {{--    <b>With Discount: </b>{{ \Cart::get($item->id)->getPriceSumWithConditions()}} NGN--}}
                             </p>
                         </div>
                         <div class="col-lg-4">
@@ -64,7 +64,7 @@
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" value="{{ $item->id }}" id="id" name="id">
-                                    <button class="btn btn-dark btn-sm" style="margin-right: 10px;"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-dark btn-sm" style="margin-right: 10px;"><i class="fa fa-trash-o"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                 <div class="col-lg-5">
                     <div class="card">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><b>Total: </b>${{ \Cart::getTotal() }}</li>
+                            <li class="list-group-item"><b>Total: </b>{{ \Cart::getTotal() }} NGN</li>
                         </ul>
                     </div>
                     <br><a href="/items" class="btn btn-dark">Continue Shopping</a>
