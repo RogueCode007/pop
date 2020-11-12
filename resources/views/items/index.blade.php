@@ -18,7 +18,7 @@
   @if(count($items) > 0)
     <div class="row">
       @foreach($items as $item)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-6 item">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-6 item">
           <div class="card" style="margin-bottom: 20px; height: auto;">
             <a href="{{route('items.show', $item->id)}}"><img src="{{asset('storage/coverImages/'.$item->image_name)}}"
               class="card-img-top mx-auto "
