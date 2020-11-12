@@ -1,6 +1,19 @@
 body {
     font-family: 'Nunito';
-    
+    min-height: 250vh;
+    position: relative;
+}
+
+/*Navbar*/
+nav{
+    background-color: #69779B;
+}
+.navbar-toggler{
+    outline: none !important;
+    border: 1px solid white !important
+}
+.navbar-toggler i{
+    color:  white
 }
 /* Welcome page */
 .img-container{
@@ -116,7 +129,23 @@ body {
 }
 footer {
     text-align: center;
-    padding: 10px
+    padding: 10px;
+    background-color: #69779B;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;   
+}
+footer span a{
+    color: gold;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: none
+}
+footer a:visited{
+    color: gold
 }
 
 
@@ -130,13 +159,17 @@ footer {
     margin: 10px  0 ;
 }
 .action p{
-    margin: 5px auto
+    margin: 5px auto;
+    font-size: 0.8em
 }
 .action p span{
     border: 1px solid red;
     color: red;
     padding: 1px 5px;
     
+}
+.add-btn i{
+    font-size: 0.8em
 }
 /* SHOW ITEM PAGE */
 .images-row{
@@ -172,7 +205,7 @@ footer {
     background-color: #ffff;
     border-radius: 10px;
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 1em;
     margin-top: 15px;
 }
 
@@ -180,21 +213,27 @@ footer {
   display: block;
   height: 400px;
 }
+.item-price{
+    color: orange;
+}
 
 .controls{
     margin-top: 10px
 }
-.item-link{
+.item-link1{
+    color: #f0ad4e;
     text-decoration: none;
-    color: white;
-    padding: 5px 7px;
-    border-radius: 5px;
-    font-size: 0.8em;
-    box-sizing: border-box
+    outline: none !important
 }
-.item-link:hover{
-    color: white;
+.item-link2{
+    color: 	#0275d8;
     text-decoration: none;
+    outline: none !important
+}
+
+.item-link:hover{
+    color: white !important;
+    text-decoration: none !important;
 }
 
 /* Cart Page */
@@ -206,14 +245,15 @@ footer {
 /* Add, Edit && Update item forms */
 .item-form{
     color: white;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 .item-form h1{
     color: black;
     text-align: center;
 }
 .item-form form{
-    padding: 20px
+    padding: 20px;
+    margin-bottom: 20px
 }
 .form-group{
     align-items: center;
@@ -230,7 +270,7 @@ footer {
     width: 70%
 }
 .item-form button{
-    outline: none;
+    outline: none !important;
 }
 
 
@@ -253,6 +293,10 @@ footer {
         display: flex
     }
 
+    /* ALL ITEMS PAGE */
+    .action p{
+        font-size: 1em;
+    }
 
     /* Add, Edit && Update item forms */
     .item-form form{

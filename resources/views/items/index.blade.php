@@ -34,7 +34,7 @@
                     <input type="hidden" value="{{ $item->price }}" id="price" name="price">
                     <input type="hidden" value="{{ $item->image_name }}" id="img" name="img">
                     <input type="hidden" value="1" id="quantity" name="quantity">
-                    <div class="">
+                    <div class="add-btn">
                       <button class="btn btn-secondary btn-sm" class="tooltip-test" title="add to cart">
                           <i class="fa fa-shopping-cart"></i> add to cart
                       </button>    

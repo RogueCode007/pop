@@ -29,7 +29,7 @@
       </div>
       <div class="item-details">
         <p>{{$item->name}}</p>
-        <p class="item-price text-danger">{{$item->price}}NGN</p>
+        <p class="item-price">{{$item->price}}NGN</p>
         <p>Details: {{$item->description}}</p>
         <form action="{{ route('cart.store') }}" method="POST">
             {{ csrf_field() }}
@@ -40,7 +40,7 @@
             <input type="hidden" value="1" id="quantity" name="quantity">
             <div>
                   <div class="">
-                    <button class="btn btn-success btn-lg" class="tooltip-test" title="add to cart">
+                    <button  class="btn btn-outline-success btn-md" class="tooltip-test" title="add to cart">
                         <i class="fa fa-shopping-cart"></i> add to cart
                     </button>
                 </div>
@@ -49,12 +49,17 @@
         <a href="{{route('items.index')}}">Back to shop</a>
         @auth
         <div class="controls">
-        <a href="{{route('items.update', $item->id)}}" class="item-link bg-warning">Edit item <span><i class="fa fa-pencil" aria-hidden="true"></i></span></a>
-        <a href="{{route('items.addPhoto', $item->id)}}" class="item-link bg-primary">Add Photo <span><i class="fa fa-camera" aria-hidden="true"></i></span></a>
+        <button type="button" class="btn btn-sm btn-outline-warning">
+          <a href="{{route('items.update', $item->id)}}" class="item-link item-link1">Edit item <span><i class="fa fa-pencil" aria-hidden="true"></i></span></a>
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-primary">
+          <a href="{{route('items.addPhoto', $item->id)}}" class=" item-link item-link2">Add Photo <span><i class="fa fa-camera" aria-hidden="true"></i></span></a>
+        </button>
+        
         <form action="{{route('items.delete', $item->id)}}" method="POST" style="display: inline">
           @csrf 
           @method('DELETE')
-          <button class=" btn btn-danger item-delete" style="border:none"> Delete item <i class="fa fa-trash-o" ></i></button>
+          <button class=" btn btn-sm btn-outline-danger"> Delete item <i class="fa fa-trash-o" ></i></button>
         </form>
         </div>
         
