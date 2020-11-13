@@ -63,7 +63,9 @@ class ItemsController extends Controller
         }
         $cover = $request->coverImage;
         $coverName  = $cover->getClientORiginalName();
-        $cover->move(storage_path().'/app/public/coverImages', $coverName);
+        $filepath = '/coverImages'.$coverName;
+        Storage::disk('s3')->put($filepath, $cover);
+        // $cover->move(storage_path().'/app/public/coverImages', $coverName);
 
         $form_data = array(
             'name' => $request->name,
