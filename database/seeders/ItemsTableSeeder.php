@@ -27,5 +27,5 @@ class ItemsTableSeeder extends Seeder
             'category'=> 'shoe',
             'image_name'=> 'randomname2'
         ]);
-    };
+    }
 }
