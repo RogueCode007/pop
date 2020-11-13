@@ -62,13 +62,11 @@ class ItemsController extends Controller
         }catch(Throwable $e){
             return redirect()->routes('items.create')->withInput();
         }
-        $s3 = new Aws\S3\S3Client([
-            'region'   => 'us-east-2',
-        ]);
+
         $cover = $request->coverImage;
         $coverName  = $cover->getClientORiginalName();
         $filepath = '/coverImages'.$coverName;
-        $s3->upload($filepath, $cover);
+        Storage::disk('s3')->put($filepath, $cover);
         // $cover->move(storage_path().'/app/public/coverImages', $coverName);
 
         $form_data = array(
