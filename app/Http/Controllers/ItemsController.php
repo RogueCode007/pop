@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Storage;
 class ItemsController extends Controller
 {
     public function index(){
-        $items = Item::latest()->paginate(9);
+        $items = Item::latest()->paginate(12);
         return view('items.index', compact('items'))
                         ->with('i', (request()->input('page', 1)- 1) 
-                        * 9);
+                        * 12);
     }
     public function show($id){
         $item = Item::findOrFail($id);
@@ -25,24 +25,24 @@ class ItemsController extends Controller
     public function show_all_dresses(){
         $items  = Item::where('category', "dress")
                     ->latest()
-                    ->paginate(9);
+                    ->paginate(12);
         return view('items.index', ["items"=> $items]);
     }
     public function show_all_footwear(){
         $items  = Item::where('category', 'footwear')
                     ->latest()
-                    ->paginate(9);
+                    ->paginate(12);
         return view('items.index', compact('items'))
                                 ->with('i', (request()->input('page', 1)- 1) 
-                                * 9);
+                                * 12);
     }
     public function show_all_bags(){
         $items  = Item::where('category', 'bag')
                     ->latest()
-                    ->paginate(9);
+                    ->paginate(12);
         return view('items.index', compact('items'))
         ->with('i', (request()->input('page', 1)- 1) 
-        * 9);
+        * 12);
     }
     public function create(){
         return view('items.create');
