@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Response;
 use Image;
 use App\Models\Photo;
 use App\Models\Item;
+use Illuminate\Support\Facades\Storage;
 
 class PhotosController extends Controller
 {
