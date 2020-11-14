@@ -19,11 +19,11 @@
         <div class="images-row">
           @foreach($images as $image)
           <div class="image-col">
-            <img src="{{asset('storage/images/'.$image->name)}}" alt="item image" onclick="showImage(this)">
+            <img src="https://darkgrambucket.s3.us-east-2.amazonaws.com/images{{$image->name}}" alt="item image" onclick="showImage(this)">
           </div>
           @endforeach
           <div class="image-col">
-            <img src="{{asset('storage/coverImages/'.$item->image_name)}}" alt="item image" onclick="showImage(this)">
+            <img src="https://darkgrambucket.s3.us-east-2.amazonaws.com/coverImages{{$item->image_name}}" alt="item image" onclick="showImage(this)">
           </div>
         </div>
       </div>

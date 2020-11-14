@@ -80,7 +80,8 @@ class ItemsController extends Controller
         if($request->hasFile('photo')){
             foreach($request->photo as $image){
                 $name = $image->getClientOriginalName();
-                $image->move(storage_path().'/app/public/images', $name);
+                $filepath = '/images'.$name;
+                Storage::disk('s3')->put($filepath, file_get_contents($image));
                 $photo = new Photo(['name' => $name]);
                 $item->photos()->save($photo);
             }
