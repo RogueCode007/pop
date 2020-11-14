@@ -14,7 +14,7 @@
       <div class="item-img">
         <div class="img-display">    
           <!-- Expanded image -->
-          <img src="{{asset('storage/coverImages/'.$item->image_name)}}" id="expandedImg" style="width:100%; height: 100%">
+          <img src="https://darkgrambucket.s3.us-east-2.amazonaws.com/coverImages{{$item->image_name}}" id="expandedImg" style="width:100%; height: 100%">
         </div>
         <div class="images-row">
           @foreach($images as $image)
