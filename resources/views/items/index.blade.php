@@ -20,7 +20,7 @@
       @foreach($items as $item)
         <div class="col-lg-3 col-md-3 col-sm-4 col-6 item">
           <div class="card" style="margin-bottom: 20px; height: auto;">
-            <a href="{{route('items.show', $item->id)}}"><img src="https://s3.console.aws.amazon.com/s3/object/darkgrambucket?region=us-east-2&prefix=coverImages{{$item->image_name}}.jpg"
+            <a href="{{route('items.show', $item->id)}}"><img src="https://darkgrambucket.s3.us-east-2.amazonaws.com/coverImages{{$item->image_name}}.jpg"
               class="card-img-top mx-auto "
               style="height: 200px; width: 100%;display: block;"
               alt="dress image"></a>
