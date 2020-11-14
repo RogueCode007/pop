@@ -35,7 +35,7 @@
         
     </div>
     <footer>
-        Built by <span ><a href="https://github.com/roguecode007">ObiwanPelosi</a></span>
+        Being built by <span ><a href="https://twitter.com/Bioye7">ObiwanPelosi</a></span>
     </footer>
     
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->    
