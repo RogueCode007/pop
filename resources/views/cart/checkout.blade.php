@@ -10,6 +10,6 @@
       </button>
     </div>
   @endif
-  <a href="{{route('items.index)}}">Bsck to shop</a>
+  <a href="{{route('items.index')}}">Back to shop</a>
 </div>
 @endsection

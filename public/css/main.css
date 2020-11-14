@@ -46,6 +46,9 @@ nav{
 .navbar-brand:hover{
     color: white;
 }
+.navbar-brand span{
+    font-size: 0.7em;
+}
 .nav-link{
     color: white;
 }
