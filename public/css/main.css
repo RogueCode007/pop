@@ -138,8 +138,6 @@ footer {
     padding: 10px;
     background-color: #69779B;
     color: white;
-    position: absolute;
-    bottom: 0;
     display: block;
     width: 100%;   
 }
