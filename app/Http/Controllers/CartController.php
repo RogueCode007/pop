@@ -42,6 +42,6 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('success_msg', 'Cart has been updated');
     }
     public function checkout(){
-        return view('cart.checkout')->with('success', 'Thanks for your order!')
+        return view('cart.checkout')->with('success', 'Thanks for your order!');
     }
 }
