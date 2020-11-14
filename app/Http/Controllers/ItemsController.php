@@ -8,7 +8,10 @@ use Image;
 use App\Models\Item;
 use App\Models\Photo;
 use Illuminate\Support\Facades\Storage;
-
+$s3 = new Aws\S3\S3Client([
+    'version'  => '2006-03-01',
+    'region'   => 'us-east-1',
+]);
 
 class ItemsController extends Controller
 {
@@ -66,7 +69,7 @@ class ItemsController extends Controller
         $cover = $request->coverImage;
         $coverName  = $cover->getClientORiginalName();
         $filepath = '/coverImages'.$coverName;
-        Storage::disk('s3')->put($filepath, $cover);
+        $s3->upload($filepath, $cover);
         // $cover->move(storage_path().'/app/public/coverImages', $coverName);
 
         $form_data = array(
